@@ -1,0 +1,57 @@
+<head>
+    <title>Spring school</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+ 
+ <style>
+     h1{
+         font-size:50px;
+         text-align: center;
+     }
+     .p2{
+        background-color: rgb(37, 37, 73);
+        height:40px;
+        
+        
+    }
+    a{
+        color:yellow;
+        padding: 9px;
+        float: left;
+        text-decoration: none;
+    }
+    
+    .p2 a:hover{
+        background-color: orangered;
+    }
+    </style>
+</head>
+<h1 style="color: green;">Login success</h1>
+    <p  class="t1" style="font-size: 30px; text-align: center;">WELCOME TO SPRING CBSE SCHOOL</p>
+    <nav class="p2">
+        <a href="sample.html">Home</a>
+        <a href="mark.html">Grade</a>
+        <a href="angular.html">Register</a>
+        <a href="event.html">Event</a>
+        <a href="editor.html">Feedback</a>
+    </nav>
+ <img class="a1" src="u.jpg" alt="" height="650px" width="100%">
+    <img class="a1"src="https://st2.depositphotos.com/2951317/10235/v/950/depositphotos_102355504-stock-illustration-education-concept-with-vector-icons.jpg" alt="" height="650px" width="100%">
+    <img class="a1"src="https://www.webanywhere.co.uk/blog/wp-content/uploads/shutterstock78643030.jpg" alt=""height="650px" width="100%">
+    <img class="a1"src="https://www.oxfordlearning.com/wp-content/uploads/2018/03/AdobeStock_88681735.jpeg" height="650px" width="100%" alt="">
+<script>
+     
+    var c=0;
+    sliding();
+    function sliding(){
+        var b;
+        var slide=document.getElementsByClassName("a1");
+        for(b=0;b<slide.length;b++){
+            slide[b].style.display="none";
+        }
+        c++;
+        if(c>slide.length){
+            c=1}
+        slide[c-1].style.display="block";
+        setTimeout(sliding,4000);
+    }
+</script>
