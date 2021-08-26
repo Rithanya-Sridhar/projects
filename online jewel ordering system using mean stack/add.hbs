@@ -1,0 +1,46 @@
+{<style>
+    table{
+        width:75%;
+        border-collapse: collapse;
+        margin-left: 200px;
+    }
+    p{
+        margin-left: 200px;
+        font-weight: bold;
+    }
+    
+    tr,td,th{
+        border:1px solid black;
+    }
+
+</style>
+{{# if products}}
+<h1 style="text-align: center;">Your Cart</h1>
+<div class="container">
+    <table border=1>
+        <tr>
+            <th>Title</th>
+            <th>Image</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Delete</th>
+        </tr>
+        {{# each products}}
+        <tr>
+            <td>{{this.item.title}}</td>
+            <td><img src="{{this.item.imgpath}}" alt="" width="70" height="70"></td>
+            <td>{{this.qty}}</td>
+            <td>{{this.price}}</td>
+            <td>delete</td>
+        </tr>
+        {{/each}}
+    </table>
+    <br><br>
+    <div class="container">
+        <p>Totalprice:{{this.totalPrice}}</p>
+    </div>
+</div>
+<a href="/checkout"><button class="btn btn-primary">Checkout</button></a>
+{{else}}
+<p>Empty Cart</p>
+{{/if}}
