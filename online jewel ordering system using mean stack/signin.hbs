@@ -1,0 +1,18 @@
+
+<div class="row">
+        <form action="/user/signin" method="POST">
+            <h2>Already a user? Signin Here</h2>
+            <label>Enter Your Email ID:</label>
+            <input type="text" name="email" id="email" required><br><br>
+            {{#if hasError}}
+            {{#each messages}}
+            <p style="color: red;">{{this}}</p>
+            {{/each}}
+            {{/if}}
+            <label>Enter Password:</label>
+            <input type="password" name="password" id="password" required><br><br>
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <button class="btn btn-primary">Sign-In</button>
+        </form>
+        
+    </div>
