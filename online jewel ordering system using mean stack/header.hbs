@@ -1,0 +1,84 @@
+<head>
+  <style>
+  .bg-light {
+    background-color: rgb(0, 217, 255)!important;
+}
+.badge{
+  background-color: grey;
+  color: black;
+}
+.dropdown{
+  position: relative;
+  display:inline-block;
+  
+}
+button{
+  margin-left: 0px;
+}
+.dropdown-content{
+  margin-left:0px;
+  display: none;
+  position:absolute;
+  z-index: 1;
+  padding: 10px;
+  background-color: rgb(9, 190, 190);
+  }
+.dropdown:hover .dropdown-content{
+  display:block;
+  }
+.dropdown-content a{
+  text-decoration: none;
+  color: grey;
+  background-color: rgb(9, 190, 190);
+  width:100px;
+
+  
+}
+.dropdown-content a:hover{
+  color: black;
+}
+</style>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="color:rgb(76, 68, 73)">JewelleryShop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/add">Cart<span class="badge">{{session.cart.totalQty}}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Payment</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" aria-expanded="false">
+            Account
+          </a>
+          <div class="dropdown-content">
+            {{# if login}}
+            <a href="/user/profile"><button>Profile</button></a>
+          <a href="/user/logout"><button>Logout</button></a>
+            {{else}}
+          <button><a href="http://localhost:3000/user/signup">Signup</a></button>
+          <button><a href="http://localhost:3000/user/signin">Signin</a></button>
+          {{/if}}
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
